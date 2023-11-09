@@ -1,0 +1,531 @@
+@use "sass:math";
+//<МИКСИНЫ>===============================================================================================
+//@import "mixins";
+@mixin text-stroke($stroke-width, $stroke-color, $fill-color: transparent) {
+	-webkit-text-stroke: $stroke-width $stroke-color;
+
+	@if $fill-color == transparent {
+		-webkit-text-fill-color: $fill-color;
+		color: $stroke-color;
+	} @else {
+		color: $fill-color;
+	}
+}
+//</МИКСИНЫ>===============================================================================================
+
+//<ШРИФТЫ>===============================================================================================
+// @font-face {
+// 	font-family: 'Gilroy';
+// 	font-display: swap;
+// 	src: url("../fonts/Gilroy-Medium/Gilroy-Medium.ttf"),
+// 	url("../fonts/Gilroy-Medium/Gilroy-Medium.woff"),
+// 	url("../fonts/Gilroy-Medium/Gilroy-Medium.woff2"),
+// 	url("../fonts/Gilroy-Bold/Gilroy-Bold.ttf"),
+// 	url("../fonts/Gilroy-Bold/Gilroy-Bold.woff"),
+// 	url("../fonts/Gilroy-Bold/Gilroy-Bold.woff2");
+
+// 	font-weight: 500;
+//   font-style: normal;
+// }
+@font-face {
+	font-family: 'Cera Pro';
+	font-display: swap;
+	src:url('../fonts/Cera-Pro/CeraPro-Medium.woff2') format('woff2');			
+	font-weight: 500;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Cera Pro';
+	font-display: swap;
+	src: url('../fonts/Cera-Pro/CeraPro-Regular.woff2') format('woff2');			
+	font-weight: normal;
+	font-style: normal;
+}
+//<Подключаем шрифты>=======================================================================================
+//&display=swap&subset=cyrillic-ext
+
+//</Подключаем шрифты>=======================================================================================
+
+//@import url('https://fonts.googleapis.com/css?family=Plus+Jakarta+Sans:500,700&display=swap');
+//font-family: 'Plus Jakarta Sans', sans-serif;
+
+//<Иконочные шрифты>==========================================================================================
+// @import "icons";
+//</Иконочные шрифты>==========================================================================================
+// @import "fonts";
+//@import "../css/fa-all";
+//<Шрифт по умолчанию>==========================================================================================
+$fontFamily: 'Cera Pro';
+$fontSize: 18px;  // размер шрифта по умолчанию из макета 
+
+//</Цвет шрифта по умолчанию>==========================================================================================
+$mainColor: rgb(231, 163, 15); // цвет шрифта по умолчанию
+$blackColor:#000;
+
+//</ШРИФТЫ>=======================================================================================================
+
+//<ПЕРЕМЕННЫЕ>==========================================================================================================
+$minWidth: 320;
+$maxWidth: 1920;
+$maxWidthContainer: 1440;
+$containerPadding:30;
+$containerWidth: $maxWidthContainer + $containerPadding;
+// брейкпоинты:
+$md1: $containerWidth + px;
+$md2: 991.98px;
+$md3: 767.98px;
+$md4: 479.98px;
+
+//</ПЕРЕМЕННЫЕ>===========================================================================================================
+
+//<ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>===============================================================================================
+@import "null";
+html{
+	// ДЛЯ ПЛАВНОЙ ПРОКРУТКИ
+	scroll-behavior: smooth;
+}
+body {
+	color: $mainColor;
+	background-color: #fff;
+	font-weight:400;
+	font-family: $fontFamily;
+	&._lock {
+		overflow: hidden;
+	}
+	font-size: $fontSize;
+
+}
+//</ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>===============================================================================================
+
+//<ОБОЛОЧКА>===========================================================================================================
+.wrapper {
+	// max-width: $maxWidth + px;
+	min-height: 100%;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	margin: 0 auto;
+
+}
+//</ОБОЛОЧКА>===========================================================================================================
+
+//<ОСНОВНАЯ СЕТКА>===========================================================================================================
+[class*="__container"] {
+	max-width: 1500px;
+	margin: 0 auto;
+	padding: 0 30px;
+	@media(max-width:1024px){
+		max-width: $containerWidth + px;
+		padding: 0 20px;
+	}
+	@media(max-width:767px){
+		padding: 0 15px;
+	}	
+	
+	//min-height: 100vh  // для всех контейнеров т.к. делаем поэкранный скролл, на других проектах не нужно
+}
+//</ОСНОВНАЯ СЕТКА>===========================================================================================================
+
+//<ПОДКЛЮЧЕНИЕ ФАЙЛОВ UI СТИЛЕЙ, ФОРМ И ГОТОВЫХ КЛАССОВ>====================================================================================================
+//@import "forms";
+//@import "ui";
+//</ПОДКЛЮЧЕНИЕ ФАЙЛОВ UI СТИЛЕЙ, ФОРМ И ГОТОВЫХ КЛАССОВ>====================================================================================================
+
+//<ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>====================================================================================================
+//@import "datepicker";
+//@import "lightgallery";
+//@import "pagging";
+//@import "popup";
+//@import "header";
+//@import "common";
+//@import "footer";
+//@import "home";
+//</ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>====================================================================================================
+
+// HEADER==========================================================================================================================
+.header {
+	position:fixed;
+	width: 100%;
+	z-index: 100;
+	padding-top:20px;
+
+@media(max-width:1400px){
+	padding-top:10px;
+}
+@media(max-width:767px){
+	padding-top:0px;
+}
+
+
+
+	// .header__container
+	&__container {
+		position:relative;
+		z-index: 100;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap:30px;
+		border-radius: 8px;
+		background-color:  #caad5c;
+		overflow: hidden;
+		min-height: 64px;
+		padding: 8px 12px 8px 12px;
+		color:#333;
+		@media(max-width:420px){
+			gap:15px;
+		}
+	}
+
+
+	// .header__logo
+	&__logo {
+		width: 50px;
+			flex:0 0 50px;
+			overflow: hidden;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			position:relative;
+			z-index: 20;
+			img{
+			max-width:100%;
+		}
+		
+	}
+
+	// .header__menu
+	&__menu {
+		flex: 1 1 100%;
+		
+		@media(max-width:767.98px){
+			z-index:0;
+      position:fixed;
+			color:#5B5C5F;
+			top:0px;
+			left:-100%;
+			width: 100%;
+			height:100%;
+			padding-top: 64px;
+			display: flex;
+			align-items: center;
+			flex-direction: column;
+			background-color:#EEF3F9;
+			transition: all 0.3s ease 0s;
+			overflow: auto;
+			padding-bottom: 15px;
+		
+			&._open{
+				left:0;
+				
+					.menu__list{
+					flex-direction: column;
+					align-items:center;					
+					row-gap:12px;
+					font-size: 18px;
+					padding: 64px 10px 0px 10px;
+					margin: 0px auto 80px;
+				}
+				.menu__item{						
+					padding:10px 20px;
+				}
+							
+			}
+
+		}
+	}
+
+	// .header__contacts
+	&__contacts {	
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		gap:8px;
+	}
+
+	// .header__phone
+	&__phone {
+		white-space: nowrap;
+		&:hover{
+			text-decoration: underline;
+		}
+	}
+	// .header__email
+	&__email {
+		white-space: nowrap;
+		&:hover{
+			text-decoration: underline;
+		}
+	}
+
+		// .header__social
+		&__social {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			gap:10px;
+		}
+		// .header__social-item
+		&__social-item {
+			width: 40px;
+			height: 40px;			
+			img{
+				max-width: 90%;
+				position:relative;
+				transition: all 0.3s ease 0s;
+			}
+			&:hover{
+				img{
+					top:-3px;
+				}
+			}
+			
+		}
+
+
+.menu {
+
+	// .menu__list
+	&__list {	
+		display:flex;
+		column-gap:16px;
+		row-gap:8px;
+		flex-wrap:wrap;
+	}
+
+	// .menu__item
+	&__item {
+	}
+
+	// .menu__link
+	&__link {
+		@media(any-hover:hover){
+			&:hover{
+				text-decoration: underline;
+			}
+		}
+	}
+
+	// .menu__icon
+	&__icon {
+		
+	}
+}
+.menu__icon {
+	
+	@media (max-width: 767.98px) {
+		flex:0 0 28px;
+		display: block;
+		text-align: right;
+		position: relative;
+		z-index:51;
+		width: 28px;
+		height: 20px;
+		border-radius: 3px;
+		cursor: pointer;
+		z-index: 20;
+		span,
+		&::before,
+		&::after {
+			content: "";
+			transition: all 0.3s ease 0s;
+			right: 0;
+			position: absolute;
+			width: 100%;
+			height: 3px;
+			background-color: #333;
+		}
+		&::before {
+			top: 0;
+		}
+		&::after {
+			bottom: 0;
+		}
+		span {
+			top: calc(50% - 1px);
+		}
+		&.menu-open {
+			span {
+				width: 0;
+			}
+			&::before {
+				top: calc(50% - 1.5px);
+				transform: rotate(-45deg);
+			}
+			&::after {
+				bottom: calc(50% - 1.5px);
+				transform: rotate(45deg);
+			}
+		}
+	}
+}
+.icon-menu {
+	display: none;
+}
+
+}
+
+//<ОСНОВНОЙ БЛОК>====================================================================================================
+      
+		.page {
+      flex: 1 1 auto;
+				
+			// .page__main
+				&__main {}
+	}
+
+
+//   ====================main===============================
+
+.main {
+padding-top: 110px;
+padding-bottom: 20px;
+background: url('../img/sot.jpg') center / cover no-repeat;
+font-weight: 500;
+		// .main__container
+		&__container {
+		}
+
+		// .main__block
+		&__block-text {
+			padding:12px;
+			background-color: #33333381;
+			border-radius: 10px;
+		}
+
+		// .main__block
+		&__block {
+			display: grid;
+			grid-template-columns: 65% 35%;
+			gap:15px;
+			margin-bottom: 20px;
+		}
+
+		// .main__title
+		&__title {
+			font-size: 52px;
+			margin-bottom: 24px;
+		}
+
+		// .main__text
+		&__text {
+			margin-bottom: 24px;
+		}
+
+		// .main__price
+		&__price {
+			font-size: 22px;
+			margin-bottom: 25px;
+		}
+
+		// .main__image
+		&__image {
+			padding:10px;
+			background-color: #fff;
+			border-radius: 10px;
+			overflow: hidden;
+			position: relative;
+			aspect-ratio: 1/1;
+			img{
+			position:absolute;
+			top:0;
+			left:0;
+			width:100%;
+			height: 100%;
+			object-fit: contain;
+			}
+		}
+
+			// .main__buttons
+			&__buttons {
+				display: flex;
+				row-gap:10px;
+				column-gap:20px;
+				align-items: center;
+				flex-wrap: wrap;
+			}
+	
+			// .main__button
+			&__button {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				padding:8px 12px;
+				border-radius: 8px;
+				background-color: #fff;
+				color:#333;
+				cursor:pointer;
+				transition: all 0.3s ease 0s;
+				&:hover{
+					background-color: #caad5c;
+					color:#fff;
+				}
+			}
+	
+			// .main__button--bg
+			&__button--bg {
+				background-color: #caad5c;
+				color:#333;
+			}
+
+		// .main__form
+		&__form {
+		}
+}
+
+.form-main {
+	    padding:12px;
+			background-color: #33333381;
+			border-radius: 10px;
+display: flex;
+justify-content: center;
+align-items: flex-start;
+flex-direction: column;
+gap:15px;
+		// .form-main__title
+		&__title {
+			font-size: 20px;
+		}
+
+		// .form-main__item
+		&__item {
+			display: inline-block;
+			padding: 8px 14px;
+			border-radius: 8px;
+			background-color: #fff;
+			min-width: 250px;
+		}
+
+		// .form-main__input
+		&__input {
+			width: 100%;
+			&::placeholder{
+				font-size: 16px;
+			}
+		}
+
+		// .form-main__item-group
+		&__item-group {
+			display: flex;
+			gap:15px;
+			flex-wrap: wrap;
+		}
+
+		// .form-main__button
+		&__button {
+			padding: 8px 14px;
+			border-radius: 8px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			background-color: #caad5c;
+			color:#333;
+			transition: all 0.3s ease 0s;
+				&:hover{
+					color:#fff;
+				}
+		}
+}
+
+

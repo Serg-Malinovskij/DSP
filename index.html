@@ -2,11 +2,11 @@
 <html lang="ru">
 
 <head>
-	<title>Панели из сотового картона</title>
+	<title>Главная</title>
 	<meta charset="UTF-8">
-	<meta name="format-detection" content="telephone=no">
+	<meta name="format-detection" content="telephone=no">	
 	<link rel="stylesheet" href="css/style.css">
-	<link rel="shortcut icon" href="img/favicon_io/favicon-16x16.png">
+	<link rel="shortcut icon" href="img/photo.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,93 +15,203 @@
 <body>
 	<div class="wrapper">
 		<header class="header">
-			<div class="header__container">
-				<div class="header__logo"><a href="example.com"><img src="img/header/HeaderLogo.png" alt="header-logo"></a>
+			<div class="header__top">
+				<div class="header-top__container">
+					<a class="header__logo" href="#">
+						<div class="header__logo-image">
+							<img src="img/header/logo.svg" alt="header-logo">
+						</div>
+					</a>
+					<a href="#" class="header__geo">
+						<div class="header__geo-icon"><img src="img/header/geo.svg" alt="geo-icon"></div>
+
+						<span class="header__geo-text">Конаковский проезд 8а, стр1</span>
+					</a>
+					<div class="header__icons">
+						<a href="tel:+74993466762" class="header__phone">
+							<img src="img/header/phone.svg" alt="phone-icon">
+							<div>+7(499)346-67-62</div>
+						</a>
+						<a href="mailto:raspll-mast@mail.ru" class="header__email">
+							<img src="img/header/email.svg" alt="email-icon">
+							<div>raspll-mast@mail.ru</div>
+						</a>
+					</div>
 				</div>
-				<nav class="header__menu menu">
-					<ul class="menu__list">
-						<li class="menu__item"><a href="#" class="menu__link">Мы предлагаем</a></li>
-						<li class="menu__item"><a href="#" class="menu__link">Для кого</a></li>
-						<li class="menu__item"><a href="#" class="menu__link">Отзывы</a></li>
-						<li class="menu__item"><a href="#" class="menu__link">Доставка</a></li>
-						<li class="menu__item"><a href="#" class="menu__link">Контакты</a></li>
-					</ul>
-				</nav>
-				<div class="header__contacts">
-					<a href="tel:+77777770707" class="header__phone">+7 777 777 07 07</a>
-					<a href="mailto:example@mail.ru" class="header__email">example@mail.ru</a>
-				</div>
-				<div class="header__social">
-					<a href="https://www.viber.com/ru/" class="header__social-item"><img src="img/header/Viber.svg"
-							alt="viber"></a>
-					<a href="https://www.whatsapp.com/?lang=ru_RU" class="header__social-item"><img src="img/header/WhatsApp.svg"
-							alt="whatsapp"></a>
-				</div>
-				<div class="menu__icon icon-menu">
-					<span></span>
-					<span></span>
-					<span></span>
+			</div>
+
+			<div class="header__bottom">
+				<div class="header-bottom__container">
+					<nav class="header__menu menu">
+						<ul class="menu__list">
+							<li class="menu__item"><a href="#services" class="menu__link">Услуги и цены</a></li>
+							<li class="menu__item"><a href="#materials" class="menu__link">Материалы</a></li>
+							<li class="menu__item"><a href="#" class="menu__link">Производство</a></li>
+							<li class="menu__item"><a href="#footer" class="menu__link">Контакты</a></li>
+						</ul>
+					</nav>
+					<nav class="menu-mobile">
+						<ul class="menu__list">
+							<li class="menu__item"><a href="#services" class="menu__link">Услуги и цены</a></li>
+							<li class="menu__item"><a href="#materials" class="menu__link">Материалы</a></li>
+							<li class="menu__item"><a href="#" class="menu__link">Производство</a></li>
+							<li class="menu__item"><a href="#footer" class="menu__link">Контакты</a></li>
+						</ul>
+					</nav>
+					<div class="menu__icon icon-menu">
+						<span></span>
+						<span></span>
+						<span></span>
+					</div>
 				</div>
 			</div>
 		</header>
 
 		<main class="page">
 
-			<section class="main">
+			<section id="main" class="main">
 
 				<div class="main__container">
-					<div class="main__block">
-						<div class="main__block-text">
-							<div class="main__title">Панели из сотового картона</div>
-						<div class="main__text">Сотовый картон – это крепкий и легкий материал, изготавливаемый в виде ячеистой
-							структуры из плоских слоев картона.</div>
-						<div class="main__price">Цена: От 5 рублей за м<sup><small>2</small></sup></div>
-
-						<div class="main__buttons">
-							<button class=" main__button main__button--bg">Связаться с нами</button>
-							<button class="main__button">Выбрать подходящий вариант</button>
-						</div>
-
-						</div>
-						
-						<div class="main__image"><img src="img/main/main.png" alt=""></div>
+					<div class="main__content content-main">
+						<h1 class="content-main__title">Распил ЛДСП и МДФ</h1>
+						<div class="content-main__text">любой сложности по вашим размерам</div>
+						<div class="content-main__decor-line"></div>
+						<ul class="content-main__list">
+							<li class="content-main__list-item">Кромление и присадка деталей</li>
+							<li class="content-main__list-item">Аккуратный и точный распил</li>
+							<li class="content-main__list-item">Изготовление от 1 до 5 дней</li>
+							<li class="content-main__list-item">Просчет за 25 минут</li>
+						</ul>
+						<a href="#" class="content-main__button"><span>Бесплатный расчет</span><img src="img/icons/button-arrow.svg"
+								alt="arrow"></a>
+						<div class="content-main__decor-round"></div>
 					</div>
-						
+					<div class="main__image"><img src="img/main/main01.png" alt="img"></div>
 
-						<form action="#" class="main__form form-main">
-							<h3 class="form-main__title">Оставте свои данные и мы свяжемся с вами</h3>
-						
-							<div class="form-main__item-group">
-								<div class="form-main__item">
-									<input class="form-main__input" tabindex="2" required type="tel" placeholder="Номер телефона"
-										name="phone" id="">
-								</div>
-									<div class="form-main__item">
-								<input class="form-main__input" tabindex="1" required type="text" placeholder="Ваше имя" name="name"
-									id="">
-							</div>
-							</div>
-							<div class="form-main__item">
-								<input class="form-main__input" tabindex="3" type="text" placeholder="Удобное время для звонка"
-									name="date" id="">
-							</div>
-
-							<button class="form-main__button" tabindex="4" type="submit">Отправить</button>
-													
-						</form>
-					
 				</div>
+			</section>
+			<section id="services" class="services">
+				<div class="services__container">
+					<div class="services__decor-round services__decor-round_1"></div>
+					<div class="services__decor-round services__decor-round_2"></div>
 
+					<h2 class="services__title">Распил ЛДСП и МДФ</h2>
+
+					<div class="services__items">
+						<div class="services__item item-services">
+							<div class="item-services__image"><img src="img/services/01.png" alt="image"></div>
+							<h3 class="item-services__title">Распил ЛДСП и МДФ</h3>
+							<p class="item-services__price">от 40 ₽/м.п.</p>
+							<div class="item-services__text">Выполним заказ без сколов и погрешностей по любым размерам, чертежам и
+								эскизам.</div>
+							<a href="#" class="item-services__button button"><span>Бесплатный расчет</span><img
+									src="img/icons/services-button-arrow.svg" alt="arrow"></a>
+						</div>
+						<div class="services__item item-services">
+							<div class="item-services__image"><img src="img/services/02.png" alt="image"></div>
+							<h3 class="item-services__title">Кромление ЛДСП</h3>
+							<p class="item-services__price">от 44 ₽/м.п.</p>
+							<div class="item-services__text">Нанесем кромку ПВХ любой толщины на торцы деталей без отслоения и
+								неровностей</div>
+							<a href="#" class="item-services__button button"><span>Бесплатный расчет</span><img
+									src="img/icons/services-button-arrow.svg" alt="arrow"></a>
+						</div>
+						<div class="services__item item-services">
+							<div class="item-services__image"><img src="img/services/03.png" alt="image"></div>
+							<h3 class="item-services__title">Присадка деталей</h3>
+							<p class="item-services__price">от 20 ₽/м.п.</p>
+							<div class="item-services__text">Просверлим необходимые отверстия в мебельных деталях для установки
+								фурнитуры.</div>
+							<a href="#" class="item-services__button button"><span>Бесплатный расчет</span><img
+									src="img/icons/services-button-arrow.svg" alt="arrow"></a>
+						</div>
+					</div>
+				</div>
 			</section>
 
+			<section id="materials" class="materials">
+				<div class="materials__container">
+					<div class="materials__decor-round materials__decor-round_1"></div>
+					<div class="materials__decor-round materials__decor-round_2"></div>
+
+					<h2 class="materials__title">Материалы в наличии</h2>
+
+					<div class="materials__items">
+						<a href="#" class="materials__item item-services">
+							<div class="item-services__image"><img src="img/materials/01.jpg" alt="image"></div>
+							<h3 class="item-services__title">ЛДСП "EGGER"</h3>
+						</a>
+						<a href="#" class="materials__item item-services">
+							<div class="item-services__image"><img src="img/materials/02.jpg" alt="image"></div>
+							<h3 class="item-services__title">ЛДСП "KRONOSPAN"</h3>
+						</a>
+						<a href="#" class="materials__item item-services">
+							<div class="item-services__image"><img src="img/materials/03.jpg" alt="image"></div>
+							<h3 class="item-services__title">КРОМКА "EGGER"</h3>
+						</a>
+						<a href="#" class="materials__item item-services">
+							<div class="item-services__image"><img src="img/materials/04.jpg" alt="image"></div>
+							<h3 class="item-services__title">КРОМКА "KRONOSPAN"</h3>
+						</a>
+					</div>
+				</div>
+			</section>
 
 		</main>
 
-		<footer class="footer">
-
+		<footer id="footer" class="footer">
+			<div class="footer__container">
+				<div class="footer__row">
+					<div class="footer__column">
+						<h5 class="footer__column-label">График  работы:</h5>
+						<div class="footer__time">
+							<p>пн-пт: 10-00 - 22-00</p>
+							<p>сб-вс: 10-00 - 22-00</p>
+						</div>
+					</div>
+					<div class="footer__column">
+						<h5 class="footer__column-label">Адрес:</h5>
+						<div class="footer__adress">
+							<p>г.&nbsp;Москва, м.&nbsp;Теплый стан,  ул.&nbsp;Профсоюзная, д.&nbsp;129а, ТРЦ&nbsp;"Принц Плаза", 5&nbsp;этаж</p>							
+						</div>
+					</div>
+					<div class="footer__column">
+						<h5 class="footer__column-label">Адрес:</h5>
+						<div class="footer__email">
+							<p>тел.: <a href="tel:+74993466762">+7 (499) 346-67-62</a></p>
+							<p>email: <a href="mailto:info.raspil-dsp77@mail.ru">info.raspil-dsp77@mail.ru</a></p>
+						</div>
+					</div>
+					
+					<div class="footer__column">
+						<h5 class="footer__column-label">Услуги</h5>
+						<div class="footer__services">
+							<a href="#">Распил</a>
+							<a href="#">Кромление</a>
+							<a href="#">Присадка</a>
+						</div>
+					</div>
+					<div class="footer__column">
+						<h5 class="footer__column-label">Материалы</h5>
+						<div class="footer__materials">
+							<a href="#">ЛДСП EGGER</a><br>
+							<a href="#">ЛДСП KRONOSPAN</a><br>
+							<a href="#">Кромка EGGER</a><br>
+							<a href="#">Кромка KRONOSPAN</a><br>
+							<a href="#">МДФ</a>
+						</div>
+					</div>
+				</div>
+				<div class="footer__bottom">
+					<div class="footer__bottom-item">ООО «СК». ИНН: 3307020877</div>
+					<div class="footer__bottom-item">ОГРН: 1163328051138</div>
+				</div>
+			</div>
 		</footer>
 
+
 	</div>
+	<script src="js/script.js"></script>
 </body>
 
 </html>
